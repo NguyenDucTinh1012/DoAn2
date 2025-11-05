@@ -1,0 +1,177 @@
+
+.link-bar {
+  position: relative;
+  z-index: 10; /* Đảm bảo link nằm trên ảnh */
+  margin-bottom: 10px;
+}
+
+.link-bar a {
+  color: brown;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.link-bar a:hover {
+  color: red;
+}
+
+.content-left-1{
+    width:65%;
+    height:auto;
+    float:left;
+}
+.left-1{
+    width:100%;
+    height:auto;
+    margin-top:20px;
+    clear:both;
+    font-size: 14px;
+    text-align: justify;
+}
+.left-1-1{
+    width:48%;
+    height:auto;
+    float:left;
+    margin-bottom:20px;
+}
+
+.left-1-1 img{
+    width:100%;
+    height:180px;
+}
+.left-1-1 a{
+    text-decoration: none;
+
+}
+.left-1-2{
+    width:48%;
+    height:auto;
+    float:right;
+    margin-bottom:20px;
+    text-align: justify;
+}
+.left-1-2 img{
+    width:100%;
+    height:180px;
+}
+.left-1-2 a{
+    text-decoration: none;
+}
+.content-left-2{
+    width:32%;
+    height:auto;
+    float:right;
+
+}
+.left-2-1{
+    text-align: justify;
+}
+.left-2-1 a{
+    text-decoration: none;
+    font-size: 14px;
+    color:rgb(18, 82, 146);
+     display: block;    
+     margin-left:10px;    /* giúp margin top/bottom có tác dụng rõ ràng */
+
+}
+
+.pagination{
+    clear:both;
+}
+.pagination a{
+    text-decoration: none;
+    font-size: 16px;
+    color:blue;
+}
+
+/* ==================== 📱 Giao diện cho điện thoại ==================== */
+@media screen and (max-width: 768px) {
+  /* Tổng thể */
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column; /* ✅ Xếp dọc toàn bộ */
+  }
+
+  /* Bỏ float để không bị lỗi bố cục */
+  .content-left,
+  .content-right {
+    width: 100%;
+    float: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Cột trái */
+  .content-left-1,
+  .content-left-2 {
+    width: 100%;
+    float: none;
+    margin-bottom: 20px;
+  }
+
+  /* Ảnh bài viết chính */
+  .content-left-1 img {
+    width: 100%;
+    height: auto; /* ✅ Ảnh co theo tỉ lệ */
+  }
+
+  /* Hai bài viết con */
+  .left-1 {
+    display: flex;
+    flex-direction: column; /* ✅ Các cặp ảnh bài viết xếp dọc */
+  }
+
+  .left-1-1,
+  .left-1-2 {
+    width: 100%;
+    float: none;
+    margin: 10px 0;
+  }
+
+  .left-1-1 img,
+  .left-1-2 img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Cột phải */
+  .content-right {
+    margin-top: 20px;
+  }
+
+  .content-right img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  /* Liên kết và chữ */
+  .left-1-1 span,
+  .left-1-2 span,
+  .left-2-1 a {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .left-2-1 a {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  /* Phân trang */
+  .pagination {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .pagination a {
+    display: inline-block;
+    margin: 0 5px;
+    font-size: 16px;
+  }
+}

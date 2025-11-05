@@ -1,0 +1,577 @@
+body{
+        margin:0px;
+    font-family: arial;
+}
+* {
+    box-sizing: border-box;
+}
+/***********************************************Phần HEADER*******************************************/
+.Header{
+
+    width:100%;
+    height:300px;
+
+}
+.Header-Top{
+    width:80%;
+    margin:auto;
+    display:flex;
+    justify-content: space-between;
+}
+.logo img {
+    height: 80px;                 /* ✅ Tự động co vừa header */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+/***********************************************PHẦN TÌM KIẾM*******************************************/
+.search {
+    display: flex;
+    align-items: center;
+    border: 2px solid #0077cc;
+    border-radius: 30px;
+    overflow: hidden;
+    width: 400px;
+    height: 40px;
+    margin-top: 25px;
+    background-color: #fff;
+}
+
+.search input[type="text"] {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.search button {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search button:hover {
+    background-color: #005fa3;
+}
+
+/* Nếu muốn có icon kính lúp */
+.search button::before {
+    content: "\1F50D"; /* Unicode icon kính lúp 🔍 */
+    margin-right: 5px;
+}
+
+.user {
+    display: flex;
+    align-items: center;       /* ✅ Căn giữa theo chiều dọc */
+    gap: 15px;
+       /* ✅ Căn cùng mức với thanh tìm kiếm */
+}
+
+.login, .register {
+    min-width: 100px;
+    height: 40px;              /* ✅ Chiều cao bằng ô search */
+    background-color: #6c63ff;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 40px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+}
+
+.login:hover, .register:hover {
+    background-color: #4a3aff;
+    transform: translateY(-2px);   /* ✅ Hiệu ứng nhấn */
+}
+
+.banner{
+    width:100%;
+}
+.banner img{
+    width:100%;
+    height:200px;
+    object-fit: cover; /* Ảnh/video sẽ lấp đầy khung chứa, giữ nguyên tỷ lệ, có thể bị cắt ở mép */
+    object-position: bottom; /* Ưu tiên hiển thị phần dưới của ảnh */
+}
+
+/* =============== PHẦN MENU CHUNG =============== */
+.menu {
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 2px solid #0077cc;
+    border-bottom: 2px solid #0077cc;
+    position: relative; /* ✅ menu nằm độc lập, không đè lên ảnh */
+    z-index: 100; /* luôn nằm trên nền banner */
+}
+
+.menu ul {
+    width: 80%;
+    margin: auto;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 12px 10px;
+    text-decoration: none;
+    color: #0077cc;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu ul li a:hover {
+    color: royalblue;
+}
+
+/* Menu con */
+.menu ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 200px;
+    z-index: 999;
+}
+
+.menu ul li:hover ul {
+    display: block;
+}
+
+.menu ul li ul li a {
+    padding: 10px;
+    font-weight: normal;
+}
+
+
+/* ================== 📱 Responsive cho điện thoại ================== */
+@media screen and (max-width: 768px) {
+    /* Tổng thể */
+    .Header-Top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Logo */
+    .logo img {
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    /* Thanh tìm kiếm */
+    .search {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    /* User (Đăng nhập / Đăng ký) */
+    .user {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .login, .register {
+        min-width: 80px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 13px;
+    }
+
+    /* Banner */
+    .banner img {
+        height: 150px;
+    }
+
+    /* Menu */
+    .menu {
+        width: 100%;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .menu ul li {
+        float: none;
+        margin: 8px 0;
+    }
+
+    .menu ul li a {
+        color: #0077cc;
+        font-size: 16px;
+    }
+
+    /* Container */
+    .container {
+        padding: 10px;
+    }
+
+    /* Footer */
+    .footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+        color: gray;
+    }
+}
+
+/* ================== 📱 Responsive cho màn hình nhỏ hơn (480px) ================== */
+@media screen and (max-width: 480px) {
+    .search {
+        flex-direction: column;
+        height: auto;
+        border-radius: 15px;
+    }
+
+    .search input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .search button {
+        width: 100%;
+        border-radius: 0 0 15px 15px;
+        padding: 10px;
+    }
+
+    .menu ul li a {
+        font-size: 15px;
+    }
+}
+
+/***********************************************PHẦN CONTAINER*******************************************/
+.container{
+    width:100%;
+  overflow: auto;  /* hoặc overflow: hidden */
+    margin:auto;
+
+}
+.wrapper{
+  
+    width:80%;
+    height: 100%;
+    margin:auto;
+    min-height:600px;
+}
+.content-left{
+    width:75%;
+    height:100%;
+    float:left;
+
+}
+.content-right{
+    width:23%;
+    height:100%;
+
+    float:right;
+}
+
+.left-left img ,.left-right img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+.left-right-top img{
+    width:100%;height:120px;
+}
+.left-left,.top-left,.bottom-left{
+    width:48%;float:left;margin-right:3.5%;
+}
+.left-right,.top-right,.bottom-right{
+    width:48%;float:right;
+}
+
+.left-right-top a{
+    text-decoration: none;
+    text-align: justify;
+}
+.left-right-bottom img{
+    width:100%;height:120px;
+}
+
+.content-left-body{
+    width:100%;
+    height: auto;
+}
+.body-left{
+    width:49%;
+    float:left;
+}
+
+.new-item .new-title{
+    text-decoration: none;
+font-weight: bolder;
+    font-size: 13px;
+}
+
+.new-item .TT{
+display: inline-block;
+    font-size: 14px;
+    text-decoration: none;
+    margin:5px
+}
+
+.body-right{
+    width:49%;
+    float:right;
+}
+
+.photo-section-title{
+    width:100%;
+   clear:both;
+   text-align: justify;
+}
+
+.photo-gallery {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px; /* khoảng cách giữa các ảnh */
+}
+
+.photo-item {
+    flex: 1; /* chia đều 3 phần */
+
+}
+
+.photo-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* giúp ảnh không bị méo */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+.photo-item a {
+    text-decoration: none;
+    font-weight: bold;
+    color:#0077cc;
+    font-size: 13px;
+}
+.photo-item span{
+    font-size: 13px;
+    color: gray;
+    font-weight: bolder;
+}
+
+.content-right-right{
+    width:100%;
+    margin-top: 10px;
+    margin-bottom:20px;
+    background-color: #4a3aff;
+}
+.right-left{
+    width:48%;
+    float:left;
+    text-align: center;
+}
+
+.right-left div{
+    width:100%;
+    height:auto;
+    margin-top:10px;
+    border: 1px solid rgb(60, 62, 182);
+}
+
+.right-left div a{
+    text-decoration: none;
+color:#0077cc;
+    font-size: 16px;
+
+}
+.right-right{
+    width:48%;
+    float:right;
+    text-align: center;
+}
+.right-right div{
+    width:100%;
+    height:auto;
+    margin-top:10px;
+    border: 1px solid rgb(60, 62, 182);
+}
+.right-right div a{
+    text-decoration: none;
+color:#0077cc;
+    font-size: 16px;}
+
+/* ==================== Responsive cho mobile ==================== */
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 95%;
+    }
+
+    .content-left, 
+    .content-right {
+        width: 100%;
+        float: none;
+        margin: 0;
+    }
+
+    /* Ẩn hoặc thu nhỏ phần bên phải nếu cần */
+    .content-right {
+        margin-top: 20px;
+    }
+
+    /* Các phần nhỏ bên trong content-left */
+    .left-left, .left-right, 
+    .body-left, .body-right,
+    .top-left, .top-right,
+    .bottom-left, .bottom-right {
+        width: 100%;
+        float: none;
+        margin: 0 0 15px 0;
+    }
+
+    /* Ảnh hiển thị vừa màn hình */
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Giảm kích cỡ chữ cho dễ đọc */
+    body, .photo-item a, .new-item .TT, .new-item .new-title {
+        font-size: 14px;
+    }
+
+    /* Căn chỉnh gallery ảnh dọc */
+    .photo-gallery {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .photo-item {
+        width: 100%;
+    }
+
+    /* Phần bên phải chia dọc */
+    .content-right-right {
+        background-color: transparent;
+    }
+
+    .right-left, .right-right {
+        width: 100%;
+        float: none;
+        margin-bottom: 10px;
+    }
+
+    .right-left div, .right-right div {
+        font-size: 14px;
+    }
+}
+
+/* Tùy chỉnh thêm cho màn hình cực nhỏ (điện thoại dưới 480px) */
+@media screen and (max-width: 480px) {
+    h4 {
+        font-size: 16px;
+    }
+
+    .new-item img {
+        width: 100%;
+        height: auto;
+        float: none;
+        margin: 10px 0;
+    }
+
+    .photo-item img {
+        height: 150px;
+    }
+
+    .photo-item a {
+        font-size: 13px;
+    }
+}
+
+
+/***********************************************PHẦN FOOTER*******************************************/
+.footer {
+    width: 100%;
+    background-color: #2b1bd5;
+    padding: 30px 0;
+    color: white;
+    text-align: left;
+}
+
+.footer-content {
+    width: 80%;
+    margin: auto;
+}
+
+.footer-banner {
+    display: block;
+    margin: 0 auto 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.content p {
+    margin: 4px 0;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.footer-logo {
+    text-align: right;
+    margin-top: 15px;
+}
+
+.footer-logo img {
+    width: 180px;
+    height: auto;
+}
+
+/* 🌟 Responsive cho mobile */
+@media (max-width: 768px) {
+    .footer-content {
+        width: 95%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .footer-banner {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .footer-logo {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .footer-logo img {
+        width: 140px;
+    }
+
+    .content p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
