@@ -175,3 +175,26 @@
     font-size: 16px;
   }
 }
+/*===================================================LAO CAI.HRML*/
+.new{
+  width:100%;height:auto;display:flex;justify-content: space-between;
+  padding:10px;
+  margin:0
+}
+
+.new .item{
+  width:32%;height:auto;
+  margin:0
+}
+.new .item img{
+  width:100%;height:auto;
+}
+.new .item p{
+  margin-top:0px;}
+.new .item a{
+  text-decoration: none;
+}
+.new .item a:hover{
+  text-decoration: underline;
+}
+
