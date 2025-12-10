@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Địa điểm Du lịch</title>
+    <link rel="stylesheet" href="../Style/admin_Diadiem.css">
+</head>
+<body>
+
+<h1>Quản lý Địa điểm Du lịch</h1>
+
+<button id="btnAdd">+ Thêm địa điểm</button>
+
+<!-- Bảng danh sách -->
+<table>
+    <thead>
+        <tr>
+            <th>Mã</th>
+            <th>Tên địa điểm</th>
+            <th>Vị trí</th>
+            <th>Mô tả</th>
+            <th>Ảnh</th>
+            <th>Lượt xem</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody id="dataBody"></tbody>
+</table>
+
+
+<!-- Popup Form -->
+<div id="popup" class="hidden">
+    <div class="popup-content">
+        <h2 id="popupTitle">Thêm địa điểm</h2>
+
+        <label>Mã địa điểm:</label>
+        <input id="maDiaDiem" type="text">
+
+        <label>Tên địa điểm:</label>
+        <input id="tenDiaDiem" type="text">
+
+        <label>Vị trí:</label>
+        <input id="viTri" type="text">
+
+        <label>Mô tả:</label>
+        <textarea id="moTa"></textarea>
+
+        <label>Ảnh (URL):</label>
+        <input id="hinhAnh" type="text">
+
+        <label>Lượt xem:</label>
+        <input id="luotXem" type="number">
+
+        <div class="popup-buttons">
+            <button onclick="saveData()">Lưu</button>
+            <button onclick="closePopup()">Hủy</button>
+        </div>
+    </div>
+</div>
+
+<script src="../Js/Admin_DiaDiem.js"></script>
+</body>
+</html>
